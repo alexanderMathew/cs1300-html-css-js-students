@@ -4,8 +4,7 @@
 }
 
 #cs1300-gallery {
-  width: 10000px;
-  margin: 0 auto;
+
 }
 
 /* Uncomment below if images are way too big.
@@ -13,18 +12,18 @@ Selects all image tags and makes them 500px;
  */
 
 img {
-  width: 500px;
-  height: 500px;
+  width: 100px;
   object-fit: cover;
 }
 
 .gallery-container {
   /* TODO add styles (hint: use flex!) https://www.w3schools.com/cssref/ */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .gallery-item {
   flex: 1;
   margin-bottom: 20px;
+  margin-right: 10px;
 }
