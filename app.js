@@ -15,7 +15,7 @@ const apiRequest = async () => {
     }
   });
 
-  // console.log(response);
+  //console.log(response);
 
   // Return the response in JSON format
   return response.json();
@@ -26,14 +26,21 @@ const updatePage = async () => {
 
   // Make API request and get an array of fruit objects
   const fruitsArray = await apiRequest();
-  // console.log(fruitsArray);
+  //console.log(fruitsArray);
 
   // TODO: Use either `map` and/or `filter` to extract some data from the array of fruit objects
   // For example, find "name of all fruits whose sugar > 15",
+  const sugarArray = fruitsArray.filter(fruit => fruit.nutritions.sugar > 15).map(fruit => fruit.name);
+  console.log(sugarArray)
 
   // TODO: Create a new HTML element to display your data
+  const fruitElement = document.createElement("fruit-data");
+  fruitElement.innerHTML = sugarArray.join([separator = ', ']);
+
 
   // TODO: Append your new element to the page
+  const galleryElement = document.getElementById("cs1300-gallery");
+  galleryElement.append(fruitElement);
 
 }
 
